@@ -50,6 +50,10 @@ public class NavCntl {
             e.printStackTrace();
         }
     }
+    
+    public void exit(){
+        System.exit(0);
+    }
             
           
 }

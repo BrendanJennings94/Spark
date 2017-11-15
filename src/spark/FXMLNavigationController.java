@@ -7,21 +7,22 @@ package spark;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
  * @author brend
  */
-public class FXMLNavigationController implements Initializable {
-
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+public class FXMLNavigationController  {
+    @FXML private Button exitBtn;
     
+    @FXML protected void handleExitButtonAction(ActionEvent event){
+        Stage theStage = (Stage) exitBtn.getScene().getWindow();
+        NavCntl.getNavCntl(theStage).exit();
+    }  
 }
