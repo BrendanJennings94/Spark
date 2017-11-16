@@ -9,10 +9,15 @@ package spark;
  *
  * @author brend
  */
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.text.*;
 import javafx.scene.control.*;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 public class LoginCntl {
     
@@ -23,6 +28,17 @@ public class LoginCntl {
     
     public LoginCntl(){
         list1 = new UserList();
+    }
+    
+    @FXML void handleCreateButtonAction(ActionEvent event) throws IOException{
+        Parent root;
+        Stage stage = new Stage();
+        root = FXMLLoader.load(getClass().getResource("FXMLNewProfileUI.fxml"));
+        stage.setScene(new Scene(root));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.initOwner(fail.getScene().getWindow());
+        stage.showAndWait();
+        
     }
     
     @FXML protected void handleSubmitButtonAction(ActionEvent event){

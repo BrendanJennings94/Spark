@@ -16,9 +16,9 @@ public class UserList {
     
     public UserList(){
         theUserList = new ArrayList();
-        User User1 = new User("bob94","pAssWord");
-        User User2 = new User("JohnS","Example");
-        User User3 = new User("AnotherName","Words");
+        User User1 = new User("bob94","pAssWord", "Bob", "Jones", "10/10/1994","random bio info", 1);
+        User User2 = new User("JohnS","Example", "John", "Smith", "8/12/1990", "other information", 2);
+        User User3 = new User("AnotherName","Words", "Another", "Name", "1/1/1","info here", 3);
         theUserList.add(User1);
         theUserList.add(User2);
         theUserList.add(User3);

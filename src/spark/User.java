@@ -12,10 +12,21 @@ package spark;
 public class User {
     private String userName;
     private String password;
+    private String firstName;
+    private String lastName;
+    private String dateOfBirth;
+    private String bio;
+    private int profileType;
     
-    public User(String theUserName, String thePassword){
+    public User(String theUserName, String thePassword, String theFN, String theLN, String theDOB, String theBio, int theProfType){
         userName = theUserName;
         password = thePassword;
+        firstName = theFN;
+        lastName = theLN;
+        dateOfBirth = theDOB;
+        bio = theBio;
+        profileType = theProfType;
+        
     }
 
     /**
@@ -44,6 +55,76 @@ public class User {
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    /**
+     * @return the firstName
+     */
+    public String getFirstName() {
+        return firstName;
+    }
+
+    /**
+     * @param firstName the firstName to set
+     */
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    /**
+     * @return the lastName
+     */
+    public String getLastName() {
+        return lastName;
+    }
+
+    /**
+     * @param lastName the lastName to set
+     */
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    /**
+     * @return the dateOfBirth
+     */
+    public String getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    /**
+     * @param dateOfBirth the dateOfBirth to set
+     */
+    public void setDateOfBirth(String dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    /**
+     * @return the bio
+     */
+    public String getBio() {
+        return bio;
+    }
+
+    /**
+     * @param bio the bio to set
+     */
+    public void setBio(String bio) {
+        this.bio = bio;
+    }
+
+    /**
+     * @return the profileType
+     */
+    public int getProfileType() {
+        return profileType;
+    }
+
+    /**
+     * @param profileType the profileType to set
+     */
+    public void setProfileType(int profileType) {
+        this.profileType = profileType;
     }
     
 }
