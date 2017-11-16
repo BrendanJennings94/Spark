@@ -35,4 +35,8 @@ public class FXMLNewProfileController {
         Stage theStage = (Stage) exitBtn.getScene().getWindow();
         theStage.close();
     }
+    
+    @FXML protected void handleSaveButtonAction(ActionEvent event){
+        
+    }
 }

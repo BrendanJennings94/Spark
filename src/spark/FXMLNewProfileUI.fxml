@@ -10,29 +10,29 @@
 
 <AnchorPane id="AnchorPane" prefHeight="524.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spark.FXMLNewProfileController">
    <children>
-      <TextArea layoutX="129.0" layoutY="294.0" prefHeight="86.0" prefWidth="431.0" />
+      <TextArea fx:id="bio" layoutX="129.0" layoutY="294.0" prefHeight="86.0" prefWidth="431.0" />
       <Label layoutX="80.0" layoutY="328.0" text="Bio:" />
       <Label layoutX="43.0" layoutY="120.0" prefHeight="18.0" prefWidth="74.0" text="First Name: " />
       <Label layoutX="363.0" layoutY="121.0" text="Last Name: " />
       <Label layoutX="199.0" layoutY="212.0" text="Date of Birth: " />
-      <Label layoutX="201.0" layoutY="258.0" text="Career Field" />
-      <TextField layoutX="136.0" layoutY="115.0" />
-      <TextField layoutX="443.0" layoutY="117.0" />
-      <TextField layoutX="289.0" layoutY="207.0" prefHeight="26.0" prefWidth="179.0" promptText="**/**/***" />
-      <TextField layoutX="289.0" layoutY="254.0" prefHeight="26.0" prefWidth="179.0" />
+      <Label layoutX="201.0" layoutY="258.0" text="Career Field: " />
+      <TextField fx:id="firstName" layoutX="136.0" layoutY="115.0" />
+      <TextField fx:id="lastName" layoutX="443.0" layoutY="117.0" />
+      <TextField fx:id="dateOfBirth" layoutX="289.0" layoutY="207.0" prefHeight="26.0" prefWidth="179.0" promptText="**/**/***" />
+      <TextField fx:id="career" layoutX="289.0" layoutY="254.0" prefHeight="26.0" prefWidth="179.0" />
       <Button layoutX="425.0" layoutY="432.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="107.0" text="Save" />
       <Button fx:id="exitBtn" layoutX="177.0" layoutY="432.0" mnemonicParsing="false" onAction="#handleExitButtonAction" prefHeight="26.0" prefWidth="107.0" text="Back" />
       <Label layoutX="43.0" layoutY="72.0" prefHeight="18.0" prefWidth="74.0" text="User Name:" />
       <Label layoutX="363.0" layoutY="73.0" text="Password: " />
-      <TextField layoutX="136.0" layoutY="67.0" />
-      <TextField layoutX="443.0" layoutY="69.0" />
+      <TextField fx:id="userName" layoutX="136.0" layoutY="67.0" />
+      <TextField fx:id="password" layoutX="443.0" layoutY="69.0" />
       <Label layoutX="129.0" layoutY="173.0" text="Profile Type: " />
-      <RadioButton layoutX="210.0" layoutY="173.0" mnemonicParsing="false" text="RadioButton">
+      <RadioButton fx:id="student" layoutX="210.0" layoutY="173.0" mnemonicParsing="false" text="Student">
          <toggleGroup>
             <ToggleGroup fx:id="group" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton layoutX="305.0" layoutY="173.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$group" />
-      <RadioButton layoutX="400.0" layoutY="173.0" mnemonicParsing="false" text="RadioButton" toggleGroup="$group" />
+      <RadioButton fx:id="jobSeeker" layoutX="305.0" layoutY="173.0" mnemonicParsing="false" text="Job Seeker" toggleGroup="$group" />
+      <RadioButton fx:id="employer" layoutX="400.0" layoutY="173.0" mnemonicParsing="false" text="Employer" toggleGroup="$group" />
    </children>
 </AnchorPane>

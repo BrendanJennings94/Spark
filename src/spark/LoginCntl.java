@@ -24,10 +24,11 @@ public class LoginCntl {
     @FXML private Label fail;
     @FXML private TextField userName;
     @FXML private PasswordField passField;
-    private UserList list1;
+    @FXML private Stage theStage;
+    
     
     public LoginCntl(){
-        list1 = new UserList();
+        
     }
     
     @FXML void handleCreateButtonAction(ActionEvent event) throws IOException{
@@ -58,7 +59,7 @@ public class LoginCntl {
 
     public boolean requestAuthenticate(String attemptUN, String attemptPass){
         boolean result = false;
-       result = getList1().Authenticate(attemptUN, attemptPass);
+       result = PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getuserList().Authenticate(attemptUN, attemptPass);
         return result;
     }
     
@@ -66,14 +67,5 @@ public class LoginCntl {
      * @return the fail
      */
    
-    public UserList getList1() {
-        return list1;
-    }
-
-    /**
-     * @param list1 the list1 to set
-     */
-    public void setList1(UserList list1) {
-        this.list1 = list1;
-    }
+    
 }
