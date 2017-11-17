@@ -20,9 +20,16 @@ import javafx.stage.Stage;
  */
 public class FXMLNavigationController  {
     @FXML private Button exitBtn;
+    @FXML private Button profBtn;
     
     @FXML protected void handleExitButtonAction(ActionEvent event){
         Stage theStage = (Stage) exitBtn.getScene().getWindow();
         NavCntl.getNavCntl(theStage).exit();
-    }  
+    } 
+    
+    @FXML protected void handleProfileButtonAction(ActionEvent event){
+        Stage stage = (Stage) exitBtn.getScene().getWindow();
+            stage.hide();
+            ProfileCntl theProfileCntl = ProfileCntl.getProfileCntl(stage);
+    }
 }

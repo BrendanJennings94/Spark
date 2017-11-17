@@ -24,22 +24,20 @@ public class LoginCntl {
     @FXML private Label fail;
     @FXML private TextField userName;
     @FXML private PasswordField passField;
-    @FXML private Stage theStage;
+    
+    
     
     
     public LoginCntl(){
         
     }
     
+    
     @FXML void handleCreateButtonAction(ActionEvent event) throws IOException{
-        Parent root;
-        Stage stage = new Stage();
-        root = FXMLLoader.load(getClass().getResource("FXMLNewProfileUI.fxml"));
-        stage.setScene(new Scene(root));
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.initOwner(fail.getScene().getWindow());
-        stage.showAndWait();
-        
+        Stage stage = (Stage) fail.getScene().getWindow();
+        stage.hide();
+        NewProfileCntl theNewProfileCntl = NewProfileCntl.getNewProfileCntl(stage); 
+       
     }
     
     @FXML protected void handleSubmitButtonAction(ActionEvent event){
@@ -63,9 +61,5 @@ public class LoginCntl {
         return result;
     }
     
-    /**
-     * @return the fail
-     */
-   
     
 }

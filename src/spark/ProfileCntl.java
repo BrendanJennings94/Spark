@@ -15,32 +15,32 @@ import javafx.stage.Stage;
  *
  * @author brend
  */
-public class NewProfileCntl {
+public class ProfileCntl {
+     @FXML private Stage stage;
+    private static ProfileCntl theProfileCntl;
     
-    @FXML private Stage stage;
-    private static NewProfileCntl theNewProfileCntl;
-    
-    private NewProfileCntl(Stage theExistingStage){
+    private ProfileCntl(Stage theExistingStage){
         stage = theExistingStage;
-        setUpNewProfileScene();
+        setUpProfileScene();
         stage.show();
     }
     
-    public static NewProfileCntl getNewProfileCntl(Stage theStage){
-        if(theNewProfileCntl != null){
-            return theNewProfileCntl;
+    public static ProfileCntl getProfileCntl(Stage theStage){
+        if(theProfileCntl != null){
+            return theProfileCntl;
         }
         else{
-            theNewProfileCntl = new NewProfileCntl(theStage);
-            return theNewProfileCntl;
+            theProfileCntl = new ProfileCntl(theStage);
+            return theProfileCntl;
         }
     }
-    @FXML public void setUpNewProfileScene(){
+    
+    @FXML public void setUpProfileScene(){
         Parent root;
         Scene scene;
         
         try{
-        root = FXMLLoader.load(getClass().getResource("FXMLNewProfileUI.fxml"));
+        root = FXMLLoader.load(getClass().getResource("FXMLProfileUI.fxml"));
         scene = new Scene (root);
         stage.setScene(scene);
         stage.show();
@@ -48,9 +48,4 @@ public class NewProfileCntl {
             e.printStackTrace();
         }
     }
-    public void exit(){
-        System.exit(0);
-    }
 }
-
-    

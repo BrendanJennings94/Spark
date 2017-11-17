@@ -7,21 +7,24 @@ package spark;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
  * @author brend
  */
-public class FXMLProfileUIController implements Initializable {
+public class FXMLProfileUIController  {
+    @FXML private Button backBtn;
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+    @FXML protected void handleBackButtonAction(ActionEvent event){
+        Stage stage = (Stage) backBtn.getScene().getWindow();
+            stage.hide();
+            NavCntl theNavCntl = NavCntl.getNavCntl(stage);
+    }
     
 }

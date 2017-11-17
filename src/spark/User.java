@@ -15,15 +15,17 @@ public class User {
     private String firstName;
     private String lastName;
     private String dateOfBirth;
+    private String career;
     private String bio;
     private int profileType;
     
-    public User(String theUserName, String thePassword, String theFN, String theLN, String theDOB, String theBio, int theProfType){
+    public User(String theUserName, String thePassword, String theFN, String theLN, String theDOB,String theCareer, String theBio, int theProfType){
         userName = theUserName;
         password = thePassword;
         firstName = theFN;
         lastName = theLN;
         dateOfBirth = theDOB;
+        career = theCareer;
         bio = theBio;
         profileType = theProfType;
         
@@ -125,6 +127,20 @@ public class User {
      */
     public void setProfileType(int profileType) {
         this.profileType = profileType;
+    }
+
+    /**
+     * @return the career
+     */
+    public String getCareer() {
+        return career;
+    }
+
+    /**
+     * @param career the career to set
+     */
+    public void setCareer(String career) {
+        this.career = career;
     }
     
 }
