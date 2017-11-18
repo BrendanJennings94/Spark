@@ -20,8 +20,10 @@ import javafx.scene.text.Text;
 public class NavCntl {
     @FXML private Stage stage;
     private static NavCntl theNavCntl;
+    private boolean PersonalityTestFlag;
     
     private NavCntl(Stage theExistingStage){
+        PersonalityTestFlag = false;
         stage = theExistingStage;
         setUpNavScene();
         stage.show();
@@ -40,20 +42,31 @@ public class NavCntl {
     @FXML public void setUpNavScene(){
         Parent root;
         Scene scene;
+        System.out.println("Moo");
         
+        if (PersonalityTestFlag == false){
         try{
+        //Custom navigation view
+        root = FXMLLoader.load(getClass().getResource("FXMLNavigation1.fxml"));
+        scene = new Scene (root);
+        stage.setScene(scene);
+        stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }}
+        else{
+            try{
+        //Changing back to the original navigation view
         root = FXMLLoader.load(getClass().getResource("FXMLNavigation.fxml"));
         scene = new Scene (root);
         stage.setScene(scene);
         stage.show();
         }catch(Exception e){
             e.printStackTrace();
-        }
+        }}
     }
     
     public void exit(){
         System.exit(0);
     }
-            
-          
 }
