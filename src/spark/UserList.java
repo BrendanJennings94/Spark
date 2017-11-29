@@ -5,18 +5,19 @@
  */
 package spark;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author brend
  */
-public class UserList {
+public class UserList implements Serializable {
     private ArrayList <User> theUserList;
     
     public UserList(){
         theUserList = new ArrayList();
-        User User1 = new User("bob94","pAssWord", "Bob", "Jones", "10/10/1994", "none","random bio info", 1);
+        User User1 = new User("bob94","PassWord", "Bob", "Jones", "10/10/1994", "none","random bio info", 1);
         User User2 = new User("JohnS","Example", "John", "Smith", "8/12/1990", "Accountant","other information", 2);
         User User3 = new User("AnotherName","Words", "Another", "Name", "1/1/1", "Software Developer" ,"info here", 3);
         theUserList.add(User1);

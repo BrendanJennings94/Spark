@@ -10,13 +10,13 @@
 
 <AnchorPane id="AnchorPane" prefHeight="482.0" prefWidth="670.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="spark.FXMLProfileUIController">
    <children>
-      <TextField layoutX="128.0" layoutY="51.0" prefHeight="26.0" prefWidth="163.0" />
-      <TextField layoutX="378.0" layoutY="142.0" prefHeight="26.0" prefWidth="163.0" />
-      <TextField layoutX="128.0" layoutY="142.0" prefHeight="26.0" prefWidth="163.0" />
-      <TextField layoutX="378.0" layoutY="99.0" prefHeight="26.0" prefWidth="163.0" />
-      <TextField layoutX="128.0" layoutY="99.0" prefHeight="26.0" prefWidth="163.0" />
-      <TextField layoutX="378.0" layoutY="51.0" prefHeight="26.0" prefWidth="163.0" />
-      <TextArea layoutX="188.0" layoutY="203.0" prefHeight="118.0" prefWidth="293.0" />
+      <TextField fx:id="userName" layoutX="128.0" layoutY="51.0" prefHeight="26.0" prefWidth="163.0" />
+      <TextField fx:id="dateOfBirth" layoutX="378.0" layoutY="142.0" prefHeight="26.0" prefWidth="163.0" />
+      <TextField fx:id="career" layoutX="128.0" layoutY="142.0" prefHeight="26.0" prefWidth="163.0" />
+      <TextField fx:id="lastName" layoutX="378.0" layoutY="99.0" prefHeight="26.0" prefWidth="163.0" />
+      <TextField fx:id="firstName" layoutX="128.0" layoutY="99.0" prefHeight="26.0" prefWidth="163.0" />
+      <TextField fx:id="password" layoutX="378.0" layoutY="51.0" prefHeight="26.0" prefWidth="163.0" />
+      <TextArea fx:id="bio" layoutX="188.0" layoutY="203.0" prefHeight="118.0" prefWidth="293.0" />
       <RadioButton layoutX="159.0" layoutY="368.0" mnemonicParsing="false" text="Student" />
       <RadioButton layoutX="305.0" layoutY="368.0" mnemonicParsing="false" text="Job Seeker" />
       <RadioButton layoutX="433.0" layoutY="368.0" mnemonicParsing="false" text="Employer" />

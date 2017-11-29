@@ -21,7 +21,7 @@
       <RadioButton fx:id="jobSeeker" layoutX="268.0" layoutY="389.0" mnemonicParsing="false" text="Job Seeker" />
       <RadioButton fx:id="employer" layoutX="387.0" layoutY="389.0" mnemonicParsing="false" text="Employer" />
       <Label layoutX="145.0" layoutY="356.0" text="Account Type: " />
-      <Button fx:id="exitBtn" layoutX="118.0" layoutY="452.0" mnemonicParsing="false" onAction="#handleExitButtonAction" prefHeight="32.0" prefWidth="142.0" text="Exit" />
+      <Button layoutX="118.0" layoutY="452.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="142.0" text="Exit" />
       <Button fx:id="saveBtn" layoutX="341.0" layoutY="452.0" mnemonicParsing="false" onAction="#handleSaveButtonAction" prefHeight="32.0" prefWidth="142.0" text="Save" />
    </children>
 </AnchorPane>

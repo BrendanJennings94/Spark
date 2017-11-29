@@ -22,6 +22,7 @@ import javafx.stage.Stage;
 public class FXMLNavigationController  {
     //FXML DECLATIONS
     @FXML private Button exitBtn;
+    @FXML private Button profBtn;
     @FXML private Button persTest;
     @FXML private Button returnToHome;
     @FXML private CheckBox c1;
@@ -53,6 +54,12 @@ public class FXMLNavigationController  {
     private double SOCIAL = 0;
     private double FLEX = 0;
     
+    @FXML protected void handleProfButtonAction(ActionEvent event){
+        Stage stage = (Stage) profBtn.getScene().getWindow();
+        stage.hide();
+        ProfileCntl.getProfileCntl(stage).setUpProfileScene();
+    }
+    
     @FXML protected void handleExitButtonAction(ActionEvent event){
         Stage theStage = (Stage) exitBtn.getScene().getWindow();
         NavCntl.getNavCntl(theStage).exit();
@@ -70,7 +77,7 @@ public class FXMLNavigationController  {
         FLEX += s3.getValue();
         MOBILE += s3.getValue();
         
-        PersonalityResults User1 = new PersonalityResults(MOBILE, NOCT, GOAL, DETAIL, SOCIAL, FLEX);
+       // PersonalityResults User1 = new PersonalityResults(MOBILE, NOCT, GOAL, DETAIL, SOCIAL, FLEX);
         
 
         

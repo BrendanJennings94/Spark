@@ -21,17 +21,38 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 public class LoginCntl {
     
+    @FXML private Stage stage;
     @FXML private Label fail;
     @FXML private TextField userName;
     @FXML private PasswordField passField;
-    
-    
-    
+    private static LoginCntl theLoginCntl;
     
     public LoginCntl(){
         
     }
     
+    public static LoginCntl getLoginCntl(Stage theStage){
+        if(theLoginCntl != null){
+            return theLoginCntl;
+        }
+        else{
+           // theLoginCntl = new LoginCntl(theStage);
+            return theLoginCntl;
+        }
+    }
+    
+    @FXML public void setUpLoginScene(){
+        Parent root;
+        Scene scene;
+        try{
+            root = FXMLLoader.load(getClass().getResource("FXMLLoginUI.fxml"));
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
     
     @FXML void handleCreateButtonAction(ActionEvent event) throws IOException{
         Stage stage = (Stage) fail.getScene().getWindow();

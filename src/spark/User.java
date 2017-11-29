@@ -5,11 +5,13 @@
  */
 package spark;
 
+import java.io.Serializable;
+
 /**
  *
  * @author brend
  */
-public class User {
+public class User implements Serializable {
     private String userName;
     private String password;
     private String firstName;

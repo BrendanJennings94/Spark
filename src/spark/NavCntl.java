@@ -42,12 +42,11 @@ public class NavCntl {
     @FXML public void setUpNavScene(){
         Parent root;
         Scene scene;
-        System.out.println("Moo");
         
         if (PersonalityTestFlag == false){
         try{
         //Custom navigation view
-        root = FXMLLoader.load(getClass().getResource("FXMLNavigation1.fxml"));
+        root = FXMLLoader.load(getClass().getResource("FXMLNavigation.fxml"));
         scene = new Scene (root);
         stage.setScene(scene);
         stage.show();

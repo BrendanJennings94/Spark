@@ -5,11 +5,13 @@
  */
 package spark;
 
+import java.io.Serializable;
+
 /**
  *
  * @author brend
  */
-public class PersistentDataCollection {
+public class PersistentDataCollection implements Serializable {
     
      private UserList theUserList;
     

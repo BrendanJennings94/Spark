@@ -11,10 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- *
- * @author brend
- */
+
 public class NewProfileCntl {
     
     @FXML private Stage stage;

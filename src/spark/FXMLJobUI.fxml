@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="spark.JobCntl">
+   <children>
+      <Button layoutX="80.0" layoutY="329.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="116.0" text="Back" />
+      <Button layoutX="415.0" layoutY="329.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="116.0" text="Post Job" />
+      <ScrollPane layoutX="93.0" layoutY="26.0" prefHeight="279.0" prefWidth="414.0">
+         <content>
+            <AnchorPane prefHeight="258.0" prefWidth="380.0">
+               <children>
+                  <TableView prefHeight="279.0" prefWidth="414.0">
+                    <columns>
+                      <TableColumn prefWidth="131.20001220703125" text="Job Title" />
+                      <TableColumn prefWidth="138.4000244140625" text="Company" />
+                        <TableColumn prefWidth="128.0" text="Salary" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

@@ -37,12 +37,7 @@ public class FXMLNewProfileController {
     @FXML private ToggleGroup group;
     @FXML Stage stage; 
     
-    @FXML protected void handleExitButtonAction(ActionEvent event) throws Exception{
-      Stage theStage = (Stage) exitBtn.getScene().getWindow();
-      NewProfileCntl.getNewProfileCntl(theStage).exit();
-       
     
-    }
     
     @FXML protected void handleSaveButtonAction(ActionEvent event){
         String UN = userName.getText();
@@ -54,8 +49,10 @@ public class FXMLNewProfileController {
         String biog = bio.getText();
         int type = 1;
         
-        PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getuserList().addUser(UN, PW, FN, LN, DOB, car, biog, type);
-        PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getuserList().printUser(3);
+       PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getuserList().addUser(UN, PW, FN, LN, DOB, car, biog, type);
+       Stage theStage = (Stage) saveBtn.getScene().getWindow(); 
+       theStage.hide();
+       LoginCntl.getLoginCntl(theStage).setUpLoginScene();
            
         
     }
