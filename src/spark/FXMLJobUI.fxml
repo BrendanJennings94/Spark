@@ -4,27 +4,30 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="spark.JobCntl">
+<AnchorPane id="AnchorPane" prefHeight="478.0" prefWidth="608.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spark.JobUICntl">
    <children>
-      <Button layoutX="80.0" layoutY="329.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="116.0" text="Back" />
-      <Button layoutX="415.0" layoutY="329.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="116.0" text="Post Job" />
-      <ScrollPane layoutX="93.0" layoutY="26.0" prefHeight="279.0" prefWidth="414.0">
+      <Button fx:id="backBtn" layoutX="262.0" layoutY="416.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="35.0" prefWidth="116.0" text="Back" />
+      <Button fx:id="postJobBtn" layoutX="468.0" layoutY="335.0" mnemonicParsing="false" onAction="#handlePostJobButtonAction" prefHeight="35.0" prefWidth="116.0" text="Post Job" />
+      <ScrollPane layoutX="65.0" layoutY="31.0" prefHeight="292.0" prefWidth="509.0">
          <content>
-            <AnchorPane prefHeight="258.0" prefWidth="380.0">
+            <AnchorPane prefHeight="287.0" prefWidth="509.0">
                <children>
-                  <TableView prefHeight="279.0" prefWidth="414.0">
+                  <TableView fx:id="jobTable" prefHeight="292.0" prefWidth="510.0">
                     <columns>
-                      <TableColumn prefWidth="131.20001220703125" text="Job Title" />
-                      <TableColumn prefWidth="138.4000244140625" text="Company" />
-                        <TableColumn prefWidth="128.0" text="Salary" />
+                      <TableColumn fx:id="jobTitleColumn" prefWidth="152.800048828125" text="Job Title" />
+                      <TableColumn fx:id="companyColumn" prefWidth="196.79998779296875" text="Company" />
+                      <TableColumn fx:id="salaryColumn" prefWidth="158.39996337890625" text="Salary" />
                     </columns>
                   </TableView>
                </children>
             </AnchorPane>
          </content>
       </ScrollPane>
+      <TextField fx:id="jobTitleTxt" layoutX="65.0" layoutY="340.0" prefHeight="26.0" prefWidth="116.0" promptText="Job Title" />
+      <TextField fx:id="jobCompanyTxt" layoutX="204.0" layoutY="340.0" prefHeight="26.0" prefWidth="116.0" promptText="Company" />
+      <TextField fx:id="jobSalaryTxt" layoutX="343.0" layoutY="340.0" prefHeight="26.0" prefWidth="116.0" promptText="Salary" />
    </children>
 </AnchorPane>

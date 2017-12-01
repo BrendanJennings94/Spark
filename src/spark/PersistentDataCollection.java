@@ -14,16 +14,24 @@ import java.io.Serializable;
 public class PersistentDataCollection implements Serializable {
     
      private UserList theUserList;
+     private JobList theJobList;
     
     
     public PersistentDataCollection(){
         if(theUserList == null){
             theUserList = new UserList();
         }
+        
+        if(theJobList == null){
+            theJobList = new JobList();
+        }
     }
     
-    public UserList getuserList(){
+    public UserList getTheUserList() {
         return theUserList;
     }
-    
+
+    public JobList getTheJobList() {
+        return theJobList;
+    }    
 }

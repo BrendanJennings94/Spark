@@ -23,6 +23,7 @@ public class FXMLNavigationController  {
     //FXML DECLATIONS
     @FXML private Button exitBtn;
     @FXML private Button profBtn;
+    @FXML private Button jobBtn;
     @FXML private Button persTest;
     @FXML private Button returnToHome;
     @FXML private CheckBox c1;
@@ -63,6 +64,12 @@ public class FXMLNavigationController  {
     @FXML protected void handleExitButtonAction(ActionEvent event){
         Stage theStage = (Stage) exitBtn.getScene().getWindow();
         NavCntl.getNavCntl(theStage).exit();
+    }
+    
+    @FXML protected void handleJobButtonAction(ActionEvent event){
+        Stage theStage =(Stage) jobBtn.getScene().getWindow();
+        theStage.hide();
+        JobCntl.getJobCntl(theStage).setUpJobListScene();
     }
     
     @FXML protected void handleSumbitButtonAction(ActionEvent event){

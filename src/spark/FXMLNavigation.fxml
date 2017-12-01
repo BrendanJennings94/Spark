@@ -16,11 +16,11 @@
       </Label>
       <Label layoutX="471.0" layoutY="66.0" text="Recently Viewed " />
       <Label layoutX="42.0" layoutY="66.0" text="Trending Jobs near you" />
-      <Button layoutX="418.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="82.0" text="Employers" />
-      <Button alignment="CENTER" layoutX="116.0" layoutY="14.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" prefWidth="82.0" text="Jobs" />
-      <Button fx:id="profBtn" alignment="CENTER" layoutX="22.0" layoutY="14.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleProfButtonAction" prefHeight="26.0" prefWidth="82.0" text="Profile" />
-      <Button layoutX="211.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="82.0" text="Careers" />
+      <Button layoutX="420.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" text="Employers" />
+      <Button fx:id="jobBtn" alignment="CENTER" layoutX="104.0" layoutY="14.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleJobButtonAction" prefHeight="26.0" prefWidth="82.0" text="Jobs" />
+      <Button fx:id="profBtn" alignment="CENTER" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleProfButtonAction" prefHeight="26.0" prefWidth="82.0" text="Profile" />
+      <Button layoutX="194.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="82.0" text="Careers" />
       <Button fx:id="exitBtn" alignment="CENTER" layoutX="532.0" layoutY="14.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleExitButtonAction" prefHeight="26.0" prefWidth="82.0" text="Exit" />
-      <Button layoutX="303.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" text="Personality Test" />
+      <Button layoutX="285.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="131.0" text="Personality Test" />
    </children>
 </AnchorPane>

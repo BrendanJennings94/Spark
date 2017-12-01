@@ -14,9 +14,9 @@ import java.io.Serializable;
 public class Job implements Serializable {
     private String jobTitle;
     private String company;
-    private int salary;
+    private String salary;
     
-    public Job(String theJT, String theComp, int theSal){
+    public Job(String theJT, String theComp, String theSal){
         jobTitle = theJT;
         company = theComp;
         salary = theSal;
@@ -53,14 +53,14 @@ public class Job implements Serializable {
     /**
      * @return the salary
      */
-    public int getSalary() {
+    public String getSalary() {
         return salary;
     }
 
     /**
      * @param salary the salary to set
      */
-    public void setSalary(int salary) {
+    public void setSalary(String salary) {
         this.salary = salary;
     }
     

@@ -38,7 +38,7 @@ public class LoginCntl {
         else{
            // theLoginCntl = new LoginCntl(theStage);
             return theLoginCntl;
-        }
+        } 
     }
     
     @FXML public void setUpLoginScene(){
@@ -78,7 +78,8 @@ public class LoginCntl {
 
     public boolean requestAuthenticate(String attemptUN, String attemptPass){
         boolean result = false;
-       result = PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getuserList().Authenticate(attemptUN, attemptPass);
+        result = PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getTheUserList().Authenticate(attemptUN, attemptPass);
+       
         return result;
     }
     

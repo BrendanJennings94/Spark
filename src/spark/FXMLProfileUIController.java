@@ -40,7 +40,7 @@ public class FXMLProfileUIController  {
     
     
     
-    @FXML protected void handleBackButtonAction(ActionEvent event){
+    @FXML protected void handleBackButtonAction(){
         Stage theStage = (Stage) backBtn.getScene().getWindow();
             theStage.hide();
             NavCntl.getNavCntl(theStage).setUpNavScene();

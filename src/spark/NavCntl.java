@@ -68,4 +68,8 @@ public class NavCntl {
     public void exit(){
         System.exit(0);
     }
+    
+    public void getJobCntl(Stage theStage){
+        JobCntl.getJobCntl(theStage);
+    }
 }

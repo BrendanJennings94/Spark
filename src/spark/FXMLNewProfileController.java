@@ -22,7 +22,7 @@ import javafx.stage.Stage;
  * @author brend
  */
 public class FXMLNewProfileController {
-    @FXML private Button exitBtn;
+    @FXML private Button backBtn;
     @FXML private Button saveBtn;
     @FXML private TextField userName;
     @FXML private TextField password;
@@ -49,11 +49,17 @@ public class FXMLNewProfileController {
         String biog = bio.getText();
         int type = 1;
         
-       PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getuserList().addUser(UN, PW, FN, LN, DOB, car, biog, type);
+       PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getTheUserList().addUser(UN, PW, FN, LN, DOB, car, biog, type);
        Stage theStage = (Stage) saveBtn.getScene().getWindow(); 
        theStage.hide();
        LoginCntl.getLoginCntl(theStage).setUpLoginScene();
-           
+       
         
+    }
+    
+    @FXML protected void handleBackButtonAction(ActionEvent event){
+        Stage theStage = (Stage) backBtn.getScene().getWindow();
+        theStage.hide();
+        LoginCntl.getLoginCntl(theStage).setUpLoginScene();
     }
 }
