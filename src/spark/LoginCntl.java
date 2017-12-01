@@ -26,6 +26,7 @@ public class LoginCntl {
     @FXML private TextField userName;
     @FXML private PasswordField passField;
     private static LoginCntl theLoginCntl;
+   // private int loggedInUserPos;
     
     public LoginCntl(){
         
@@ -52,7 +53,7 @@ public class LoginCntl {
         }catch(Exception e){
             e.printStackTrace();
         }
-    }
+    } 
     
     @FXML void handleCreateButtonAction(ActionEvent event) throws IOException{
         Stage stage = (Stage) fail.getScene().getWindow();
@@ -65,6 +66,7 @@ public class LoginCntl {
         String attUN = userName.getText();
         String attPass = passField.getText();
         if(requestAuthenticate(attUN, attPass)){
+           //setLoggedInUserPos(getAuthenticatedUserDataPos(attUN,attPass));
             Stage stage = (Stage) fail.getScene().getWindow();
             stage.hide();
             NavCntl theNavCntl = NavCntl.getNavCntl(stage);
@@ -78,10 +80,25 @@ public class LoginCntl {
 
     public boolean requestAuthenticate(String attemptUN, String attemptPass){
         boolean result = false;
-        result = PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getTheUserList().Authenticate(attemptUN, attemptPass);
-       
+        int possibleUser;
+        possibleUser = PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getTheUserList().Authenticate(attemptUN, attemptPass);
+        if(possibleUser!=-1){
+            result = true;
+        }
+        
         return result;
     }
     
+    public int getAuthenticatedUserDataPos(String UN, String PW){
+        int loggedUser = PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getTheUserList().Authenticate(UN, PW);
+        return loggedUser;
+    }
     
+  /*  public int getLoggedInUserPos(){
+        return loggedInUserPos;
+    }
+    
+    public void setLoggedInUserPos(int i){
+        loggedInUserPos = i;
+    } */
 }

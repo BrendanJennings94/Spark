@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spark.FXMLNavigationController">
+<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spark.FXMLNavigationController">
    <children>
       <TextField layoutX="98.0" layoutY="342.0" prefHeight="26.0" prefWidth="433.0" promptText="Search Jobs..." />
       <Label layoutX="182.0" layoutY="307.0" prefHeight="27.0" prefWidth="266.0" text="Enter a keyword, title, or location">
@@ -16,11 +16,11 @@
       </Label>
       <Label layoutX="471.0" layoutY="66.0" text="Recently Viewed " />
       <Label layoutX="42.0" layoutY="66.0" text="Trending Jobs near you" />
-      <Button layoutX="420.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" text="Employers" />
-      <Button fx:id="jobBtn" alignment="CENTER" layoutX="104.0" layoutY="14.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleJobButtonAction" prefHeight="26.0" prefWidth="82.0" text="Jobs" />
-      <Button fx:id="profBtn" alignment="CENTER" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleProfButtonAction" prefHeight="26.0" prefWidth="82.0" text="Profile" />
-      <Button layoutX="194.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="82.0" text="Careers" />
-      <Button fx:id="exitBtn" alignment="CENTER" layoutX="532.0" layoutY="14.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleExitButtonAction" prefHeight="26.0" prefWidth="82.0" text="Exit" />
-      <Button layoutX="285.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="131.0" text="Personality Test" />
+      <Button layoutX="499.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="102.0" text="Employers" />
+      <Button fx:id="jobBtn" alignment="CENTER" layoutX="134.0" layoutY="14.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleJobButtonAction" prefHeight="26.0" prefWidth="82.0" text="Jobs" />
+      <Button fx:id="profBtn" alignment="CENTER" layoutX="21.0" layoutY="14.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleProfButtonAction" prefHeight="26.0" prefWidth="82.0" text="Profile" />
+      <Button layoutX="241.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="82.0" text="Careers" />
+      <Button fx:id="exitBtn" alignment="CENTER" layoutX="520.0" layoutY="391.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleExitButtonAction" prefHeight="26.0" prefWidth="82.0" text="Exit" />
+      <Button layoutX="345.0" layoutY="14.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="131.0" text="Personality Test" />
    </children>
 </AnchorPane>

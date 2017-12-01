@@ -62,8 +62,10 @@ public class FXMLNavigationController  {
     }
     
     @FXML protected void handleExitButtonAction(ActionEvent event){
+        
         Stage theStage = (Stage) exitBtn.getScene().getWindow();
         NavCntl.getNavCntl(theStage).exit();
+       
     }
     
     @FXML protected void handleJobButtonAction(ActionEvent event){

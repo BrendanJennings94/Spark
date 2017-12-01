@@ -22,7 +22,7 @@ import javafx.stage.Stage;
  *
  * @author brend
  */
-public class FXMLProfileUIController  {
+public class FXMLProfileUIController implements Initializable  {
     @FXML private Button backBtn;
     @FXML private Button saveBtn;
     @FXML private TextField userName;
@@ -36,15 +36,22 @@ public class FXMLProfileUIController  {
     @FXML private TextField career;
     @FXML private TextArea bio;
     @FXML private ToggleGroup group;
-    @FXML Stage stage; 
+     
     
-    
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        //Stage theStage = (Stage) backBtn.getScene().getWindow();
+        //int i = LoginCntl.getLoginCntl(theStage).getLoggedInUserPos();
+        //userName.setText(PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getTheUserList().getTheUserList().get(i).getUserName());
+    }
     
     @FXML protected void handleBackButtonAction(){
         Stage theStage = (Stage) backBtn.getScene().getWindow();
             theStage.hide();
             NavCntl.getNavCntl(theStage).setUpNavScene();
     }
+
+    
     
     
     

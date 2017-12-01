@@ -25,13 +25,13 @@ public class UserList implements Serializable {
         theUserList.add(User3);
     }
     
-    public boolean Authenticate(String attemptUserName, String attemptPassword){
-        boolean result = false;
+    public int Authenticate(String attemptUserName, String attemptPassword){
+        int result = -1;
         
         for(int i=0; i < getTheUserList().size();i++){
             if(attemptUserName.equals(getTheUserList().get(i).getUserName())){
                 if(attemptPassword.equals(getTheUserList().get(i).getPassword())){
-                     result = true;
+                     result = i;
                 }
             }
         }
@@ -40,7 +40,7 @@ public class UserList implements Serializable {
     
     public void addUser(String UN, String PW, String FN, String LN, String DOB, String car, String bio, int type ){
         User newUser = new User(UN, PW, FN, LN, DOB, car, bio, type);
-        theUserList.add(newUser);
+        
     }
     
     public void printUser(int i){

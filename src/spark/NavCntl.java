@@ -22,11 +22,13 @@ public class NavCntl {
     private static NavCntl theNavCntl;
     private boolean PersonalityTestFlag;
     
+    
     private NavCntl(Stage theExistingStage){
         PersonalityTestFlag = false;
         stage = theExistingStage;
         setUpNavScene();
         stage.show();
+        
     }
     
     public static NavCntl getNavCntl(Stage theStage){

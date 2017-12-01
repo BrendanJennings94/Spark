@@ -45,9 +45,16 @@ public class NewProfileCntl {
             e.printStackTrace();
         }
     }
+    
+    public void addUser(User newUser){
+        PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getTheUserList().getTheUserList().add(newUser);
+        PersistentDataCntl.getPersistentDataCntl().writeSerializedDataModel();
+    }
+    
     public void exit(){
         System.exit(0);
     }
+   
 }
 
     

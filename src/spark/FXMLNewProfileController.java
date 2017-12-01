@@ -49,10 +49,14 @@ public class FXMLNewProfileController {
         String biog = bio.getText();
         int type = 1;
         
-       PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getTheUserList().addUser(UN, PW, FN, LN, DOB, car, biog, type);
-       Stage theStage = (Stage) saveBtn.getScene().getWindow(); 
+        User newUser = new User(UN,PW,FN,LN,DOB,car,biog,type);
+       
+        Stage theStage = (Stage) saveBtn.getScene().getWindow();
+        NewProfileCntl.getNewProfileCntl(theStage).addUser(newUser);
+       
+      /* Stage theStage = (Stage) saveBtn.getScene().getWindow(); 
        theStage.hide();
-       LoginCntl.getLoginCntl(theStage).setUpLoginScene();
+       LoginCntl.getLoginCntl(theStage).setUpLoginScene(); */
        
         
     }
