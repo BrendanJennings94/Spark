@@ -24,6 +24,7 @@ public class FXMLNavigationController  {
     @FXML private Button exitBtn;
     @FXML private Button profBtn;
     @FXML private Button jobBtn;
+    @FXML private Button careerBtn;
     @FXML private Button persTest;
     @FXML private Button returnToHome;
     @FXML private CheckBox c1;
@@ -72,6 +73,13 @@ public class FXMLNavigationController  {
         Stage theStage =(Stage) jobBtn.getScene().getWindow();
         theStage.hide();
         JobCntl.getJobCntl(theStage).setUpJobListScene();
+       
+    }
+    
+    @FXML protected void handleCareerButtonAction(ActionEvent event){
+        Stage theStage =(Stage) careerBtn.getScene().getWindow();
+        theStage.hide();
+        CareerCntl.getCareerCntl(theStage).setUpCareerListScene();
     }
     
     @FXML protected void handleSumbitButtonAction(ActionEvent event){

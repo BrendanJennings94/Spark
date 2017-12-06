@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1">
-    
+<AnchorPane id="AnchorPane" prefHeight="470.0" prefWidth="743.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spark.CareerUICntl">
+   <children>
+      <ScrollPane layoutX="68.0" layoutY="41.0" prefHeight="276.0" prefWidth="608.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="careerTable" prefHeight="276.0" prefWidth="608.0">
+                    <columns>
+                      <TableColumn fx:id="careerColumn" prefWidth="136.79995727539062" text="Career" />
+                      <TableColumn fx:id="descriptionColumn" prefWidth="300.0000762939453" text="Description" />
+                        <TableColumn fx:id="salaryRangeColumn" prefWidth="171.2000732421875" text="Salary Range" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <Button fx:id="backBtn" layoutX="275.0" layoutY="397.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="26.0" prefWidth="123.0" text="Back" />
+      <TextField fx:id="careerTxt" layoutX="68.0" layoutY="337.0" prefHeight="26.0" prefWidth="134.0" promptText="Career" />
+      <TextField fx:id="descriptionTxt" layoutX="208.0" layoutY="337.0" prefHeight="26.0" prefWidth="229.0" promptText="Description" />
+      <TextField fx:id="salaryRangeTxt" layoutX="446.0" layoutY="337.0" prefHeight="26.0" prefWidth="123.0" promptText="Salary Range" />
+      <Button fx:id="postBtn" layoutX="580.0" layoutY="337.0" mnemonicParsing="false" onAction="#handlePostCareerButtonAction" prefHeight="26.0" prefWidth="96.0" text="Post" />
+   </children>
 </AnchorPane>

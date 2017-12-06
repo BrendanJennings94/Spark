@@ -5,13 +5,17 @@
  */
 package spark;
 
+import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 /**
  *
  * @author brend
  */
-public class CareerList {
+public class CareerList implements Serializable{
     
     private ArrayList <Career> theCareerList;
     
@@ -24,6 +28,13 @@ public class CareerList {
         theCareerList.add(career1);
         theCareerList.add(career2);
         theCareerList.add(career3);
+    }
+    
+    public ObservableList<Career> getCareerData(){
+        ObservableList<Career> theListOfCareers;
+        List<Career> careerList = (List<Career>) theCareerList;
+        theListOfCareers = FXCollections.observableList(careerList);
+        return theListOfCareers;
     }
     
 }

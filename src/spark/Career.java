@@ -5,11 +5,15 @@
  */
 package spark;
 
+import java.io.Serializable;
+
+
+
 /**
  *
  * @author brend
  */
-public class Career {
+public class Career implements Serializable{
     
     private String careerName;
     private String description;

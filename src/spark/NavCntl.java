@@ -74,4 +74,8 @@ public class NavCntl {
     public void getJobCntl(Stage theStage){
         JobCntl.getJobCntl(theStage);
     }
+    
+    public void getCareerCntl(Stage theStage){
+        CareerCntl.getCareerCntl(theStage);
+    }
 }

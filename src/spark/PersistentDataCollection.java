@@ -15,6 +15,7 @@ public class PersistentDataCollection implements Serializable {
     
      private UserList theUserList;
      private JobList theJobList;
+     private CareerList theCareerList;
     
     
     public PersistentDataCollection(){
@@ -25,6 +26,10 @@ public class PersistentDataCollection implements Serializable {
         if(theJobList == null){
             theJobList = new JobList();
         }
+        
+        if(theCareerList == null){
+            theCareerList = new CareerList();
+        }
     }
     
     public UserList getTheUserList() {
@@ -33,5 +38,9 @@ public class PersistentDataCollection implements Serializable {
 
     public JobList getTheJobList() {
         return theJobList;
-    }    
+    }  
+    
+    public CareerList getTheCareerList(){
+        return theCareerList;
+    }
 }
