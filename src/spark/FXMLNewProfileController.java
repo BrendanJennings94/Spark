@@ -5,11 +5,11 @@
  */
 package spark;
 
+
+import java.io.IOException;
+import java.net.URISyntaxException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextArea;
@@ -39,7 +39,7 @@ public class FXMLNewProfileController {
     
     
     
-    @FXML protected void handleSaveButtonAction(ActionEvent event){
+    @FXML protected void handleSaveButtonAction(ActionEvent event) throws URISyntaxException, IOException{
         String UN = userName.getText();
         String PW = password.getText();
         String FN = firstName.getText();
@@ -53,17 +53,17 @@ public class FXMLNewProfileController {
        
         Stage theStage = (Stage) saveBtn.getScene().getWindow();
         NewProfileCntl.getNewProfileCntl(theStage).addUser(newUser);
+        NewProfileCntl.getNewProfileCntl(theStage).restartApplication();
        
-      /* Stage theStage = (Stage) saveBtn.getScene().getWindow(); 
-       theStage.hide();
-       LoginCntl.getLoginCntl(theStage).setUpLoginScene(); */
-       
+    }
+    
+    @FXML protected void handleBackButtonAction(ActionEvent event) throws IOException, URISyntaxException{
+        Stage theStage = (Stage) backBtn.getScene().getWindow();
+        theStage.hide();
+        
+        NewProfileCntl.getNewProfileCntl(theStage).restartApplication();
+        
         
     }
     
-    @FXML protected void handleBackButtonAction(ActionEvent event){
-        Stage theStage = (Stage) backBtn.getScene().getWindow();
-        theStage.hide();
-        LoginCntl.getLoginCntl(theStage).setUpLoginScene();
-    }
 }
