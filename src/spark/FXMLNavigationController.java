@@ -5,6 +5,8 @@
  */
 package spark;
 
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -21,7 +23,7 @@ import javafx.stage.Stage;
  */
 public class FXMLNavigationController  {
     //FXML DECLATIONS
-    @FXML private Button exitBtn;
+    @FXML private Button logoutBtn;
     @FXML private Button profBtn;
     @FXML private Button jobBtn;
     @FXML private Button careerBtn;
@@ -60,12 +62,12 @@ public class FXMLNavigationController  {
         Stage stage = (Stage) profBtn.getScene().getWindow();
         stage.hide();
         ProfileCntl.getProfileCntl(stage).setUpProfileScene();
+        
     }
     
-    @FXML protected void handleExitButtonAction(ActionEvent event){
-        
-        Stage theStage = (Stage) exitBtn.getScene().getWindow();
-        NavCntl.getNavCntl(theStage).exit();
+    @FXML protected void handleLogoutButtonAction(ActionEvent event) throws URISyntaxException, IOException{
+        Stage stage = (Stage) logoutBtn.getScene().getWindow();
+        NavCntl.getNavCntl(stage).Logout();
        
     }
     

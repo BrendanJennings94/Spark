@@ -40,7 +40,21 @@ public class UserList implements Serializable {
     
     public void addUser(String UN, String PW, String FN, String LN, String DOB, String car, String bio, int type ){
         User newUser = new User(UN, PW, FN, LN, DOB, car, bio, type);
-        
+    }
+    
+    public int matchUserIndex(String UserName){
+        int theUserInList = 0;
+   
+        for(int i=0; i < getTheUserList().size();i++){
+            if(UserName.equals(getTheUserList().get(i).getUserName())){
+                theUserInList = i;
+            }
+        }
+        return theUserInList;
+    }
+    
+    public void updateUserInfo(int theIndex, User updatedUser){
+        getTheUserList().set(theIndex, updatedUser);
     }
     
     public void printUser(int i){

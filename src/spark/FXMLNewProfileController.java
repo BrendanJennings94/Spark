@@ -47,7 +47,9 @@ public class FXMLNewProfileController {
         String DOB = dateOfBirth.getText();
         String car = career.getText();
         String biog = bio.getText();
-        int type = 1;
+        int type=1;
+        
+        
         
         User newUser = new User(UN,PW,FN,LN,DOB,car,biog,type);
        

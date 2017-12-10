@@ -26,7 +26,7 @@ public class FXMLProfileUIController implements Initializable  {
     @FXML private Button backBtn;
     @FXML private Button saveBtn;
     @FXML private TextField userName;
-    @FXML private TextField password;
+    @FXML private TextField passWord;
     @FXML private TextField firstName;
     @FXML private TextField lastName;
     @FXML private RadioButton student;
@@ -35,25 +35,57 @@ public class FXMLProfileUIController implements Initializable  {
     @FXML private TextField dateOfBirth;
     @FXML private TextField career;
     @FXML private TextArea bio;
-    @FXML private ToggleGroup group;
      
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //Stage theStage = (Stage) backBtn.getScene().getWindow();
-        //int i = LoginCntl.getLoginCntl(theStage).getLoggedInUserPos();
-        //userName.setText(PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getTheUserList().getTheUserList().get(i).getUserName());
+        userName.setText(PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getLoggedUser().getUserName());
+        passWord.setText(PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getLoggedUser().getPassword());
+        firstName.setText(PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getLoggedUser().getFirstName());
+        lastName.setText(PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getLoggedUser().getLastName());
+        dateOfBirth.setText(PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getLoggedUser().getDateOfBirth());
+        career.setText(PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getLoggedUser().getCareer());
+        bio.setText(PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getLoggedUser().getBio());
+        
+        if(PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getLoggedUser().getProfileType() == 1){
+            student.selectedProperty().set(true);
+        }
+        else if(PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getLoggedUser().getProfileType() == 2){
+            jobSeeker.selectedProperty().set(true);
+        }
+        else if(PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getLoggedUser().getProfileType() == 3){
+            employer.selectedProperty().set(true);
+        }
     }
     
     @FXML protected void handleBackButtonAction(){
         Stage theStage = (Stage) backBtn.getScene().getWindow();
-            theStage.hide();
-            NavCntl.getNavCntl(theStage).setUpNavScene();
+        theStage.hide();
+        NavCntl.getNavCntl(theStage).setUpNavScene();
     }
 
+    @FXML protected void handleSaveButtonAction(){
+        User updatedUser = new User(userName.getText(),passWord.getText(),firstName.getText(),lastName.getText(),dateOfBirth.getText(),career.getText(),bio.getText(),profTypeNumber());
+        PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getTheUserList().updateUserInfo(PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getTheUserList().matchUserIndex(updatedUser.getUserName()), updatedUser);
+        PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().setLoggedUser(updatedUser);
+        PersistentDataCntl.getPersistentDataCntl().writeSerializedDataModel();
+        
+        Stage theStage = (Stage) backBtn.getScene().getWindow();
+        theStage.hide();
+        NavCntl.getNavCntl(theStage).setUpNavScene();
+    }
     
-    
-    
-    
-    
+    public int profTypeNumber(){
+        int theNumber= 0;
+        if(student.isSelected()){
+            theNumber = 1;
+        }
+        else if(jobSeeker.isSelected()){
+            theNumber = 2;
+        }
+        else if(employer.isSelected()){
+            theNumber = 3;
+        }
+        return theNumber;
+    }
 }

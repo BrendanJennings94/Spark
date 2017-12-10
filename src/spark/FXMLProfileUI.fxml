@@ -5,23 +5,27 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="482.0" prefWidth="670.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/9.0.1" fx:controller="spark.FXMLProfileUIController">
+<AnchorPane id="AnchorPane" prefHeight="482.0" prefWidth="670.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spark.FXMLProfileUIController">
    <children>
       <TextField fx:id="userName" layoutX="128.0" layoutY="51.0" prefHeight="26.0" prefWidth="163.0" />
       <TextField fx:id="dateOfBirth" layoutX="378.0" layoutY="142.0" prefHeight="26.0" prefWidth="163.0" />
       <TextField fx:id="career" layoutX="128.0" layoutY="142.0" prefHeight="26.0" prefWidth="163.0" />
       <TextField fx:id="lastName" layoutX="378.0" layoutY="99.0" prefHeight="26.0" prefWidth="163.0" />
       <TextField fx:id="firstName" layoutX="128.0" layoutY="99.0" prefHeight="26.0" prefWidth="163.0" />
-      <TextField fx:id="password" layoutX="378.0" layoutY="51.0" prefHeight="26.0" prefWidth="163.0" />
+      <TextField fx:id="passWord" layoutX="378.0" layoutY="51.0" prefHeight="26.0" prefWidth="163.0" />
       <TextArea fx:id="bio" layoutX="188.0" layoutY="203.0" prefHeight="118.0" prefWidth="293.0" />
-      <RadioButton layoutX="159.0" layoutY="368.0" mnemonicParsing="false" text="Student" />
-      <RadioButton layoutX="305.0" layoutY="368.0" mnemonicParsing="false" text="Job Seeker" />
-      <RadioButton layoutX="433.0" layoutY="368.0" mnemonicParsing="false" text="Employer" />
+      <RadioButton fx:id="student" layoutX="159.0" layoutY="368.0" mnemonicParsing="false" text="Student">
+         <toggleGroup>
+            <ToggleGroup fx:id="group" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="jobSeeker" layoutX="305.0" layoutY="368.0" mnemonicParsing="false" text="Job Seeker" toggleGroup="$group" />
+      <RadioButton fx:id="employer" layoutX="433.0" layoutY="368.0" mnemonicParsing="false" text="Employer" toggleGroup="$group" />
       <Button fx:id="backBtn" layoutX="154.0" layoutY="424.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="26.0" prefWidth="112.0" text="Back" />
-      <Button layoutX="404.0" layoutY="424.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="112.0" text="Save" />
+      <Button fx:id="saveBtn" layoutX="404.0" layoutY="424.0" mnemonicParsing="false" onAction="#handleSaveButtonAction" prefHeight="26.0" prefWidth="112.0" text="Save" />
       <Label layoutX="145.0" layoutY="185.0" text="Bio:" />
       <Label layoutX="140.0" layoutY="334.0" text="Account Type" />
    </children>

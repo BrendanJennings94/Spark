@@ -16,6 +16,7 @@ public class PersistentDataCollection implements Serializable {
      private UserList theUserList;
      private JobList theJobList;
      private CareerList theCareerList;
+     private User loggedUser;
     
     
     public PersistentDataCollection(){
@@ -42,5 +43,19 @@ public class PersistentDataCollection implements Serializable {
     
     public CareerList getTheCareerList(){
         return theCareerList;
+    }
+
+    /**
+     * @return the loggedUser
+     */
+    public User getLoggedUser() {
+        return loggedUser;
+    }
+
+    /**
+     * @param loggedUser the loggedUser to set
+     */
+    public void setLoggedUser(User loggedUser) {
+        this.loggedUser = loggedUser;
     }
 }

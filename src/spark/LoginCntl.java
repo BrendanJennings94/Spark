@@ -26,34 +26,11 @@ public class LoginCntl {
     @FXML private TextField userName;
     @FXML private PasswordField passField;
     private static LoginCntl theLoginCntl;
-   // private int loggedInUserPos;
+    
     
     public LoginCntl(){
         
     }
-    
-    public static LoginCntl getLoginCntl(Stage theStage){
-        if(theLoginCntl != null){
-            return theLoginCntl;
-        }
-        else{
-           // theLoginCntl = new LoginCntl(theStage);
-            return theLoginCntl;
-        } 
-    }
-    
-    @FXML public void setUpLoginScene(){
-        Parent root;
-        Scene scene;
-        try{
-            root = FXMLLoader.load(getClass().getResource("FXMLLoginUI.fxml"));
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-    } 
     
     @FXML void handleCreateButtonAction(ActionEvent event) throws IOException{
         Stage stage = (Stage) fail.getScene().getWindow();
@@ -66,7 +43,9 @@ public class LoginCntl {
         String attUN = userName.getText();
         String attPass = passField.getText();
         if(requestAuthenticate(attUN, attPass)){
-           //setLoggedInUserPos(getAuthenticatedUserDataPos(attUN,attPass));
+            User theUser = PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getTheUserList().getTheUserList().get(PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getTheUserList().Authenticate(attUN, attPass));
+            PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().setLoggedUser(theUser);
+            PersistentDataCntl.getPersistentDataCntl().writeSerializedDataModel();
             Stage stage = (Stage) fail.getScene().getWindow();
             stage.hide();
             NavCntl theNavCntl = NavCntl.getNavCntl(stage);
@@ -89,16 +68,4 @@ public class LoginCntl {
         return result;
     }
     
-    public int getAuthenticatedUserDataPos(String UN, String PW){
-        int loggedUser = PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getTheUserList().Authenticate(UN, PW);
-        return loggedUser;
-    }
-    
-  /*  public int getLoggedInUserPos(){
-        return loggedInUserPos;
-    }
-    
-    public void setLoggedInUserPos(int i){
-        loggedInUserPos = i;
-    } */
 }

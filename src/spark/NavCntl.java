@@ -5,6 +5,10 @@
  */
 package spark;
 
+import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
+import java.util.ArrayList;
 import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,6 +25,7 @@ public class NavCntl {
     @FXML private Stage stage;
     private static NavCntl theNavCntl;
     private boolean PersonalityTestFlag;
+    private static User theLoggedUser; 
     
     
     private NavCntl(Stage theExistingStage){
@@ -67,7 +72,22 @@ public class NavCntl {
         }}
     }
     
-    public void exit(){
+    public void Logout() throws URISyntaxException, IOException{
+        final String javaBin = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
+        final File currentJar = new File(Spark.class.getProtectionDomain().getCodeSource().getLocation().toURI());
+
+        /* is it a jar file? */
+        if(!currentJar.getName().endsWith(".jar"))
+          return;
+
+        /* Build command: java -jar application.jar */
+        final ArrayList<String> command = new ArrayList<String>();
+        command.add(javaBin);
+        command.add("-jar");
+        command.add(currentJar.getPath());
+
+        final ProcessBuilder builder = new ProcessBuilder(command);
+        builder.start();
         System.exit(0);
     }
     
@@ -78,4 +98,5 @@ public class NavCntl {
     public void getCareerCntl(Stage theStage){
         CareerCntl.getCareerCntl(theStage);
     }
+
 }
