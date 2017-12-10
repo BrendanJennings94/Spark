@@ -42,6 +42,10 @@ public class CareerUICntl implements Initializable {
         salaryRangeColumn.setCellValueFactory(new PropertyValueFactory<Career,String>("salaryRange"));
         
         careerTable.setItems(listOfCareers);
+        
+        if(PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getLoggedUser().getProfileType()!=3){
+            postBtn.setDisable(true);
+        }
     }
     
     public void handlePostCareerButtonAction(){

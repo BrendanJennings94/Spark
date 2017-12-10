@@ -44,6 +44,10 @@ public class JobUICntl implements Initializable{
         
         jobTable.setItems(listOfJobs);
         
+        if(PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getLoggedUser().getProfileType()!=3){
+            postJobBtn.setDisable(true);
+        }
+        
     }
     
     public void handlePostJobButtonAction(){
