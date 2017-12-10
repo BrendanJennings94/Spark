@@ -49,6 +49,16 @@ public class FXMLNewProfileController {
         String biog = bio.getText();
         int type=1;
         
+        if(student.isSelected()){
+            type=1;
+        }
+        else if(jobSeeker.isSelected()){
+            type=2;
+        }
+        else if(employer.isSelected()){
+            type = 3;
+        }
+        
         
         
         User newUser = new User(UN,PW,FN,LN,DOB,car,biog,type);

@@ -5,6 +5,7 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane id="AnchorPane" prefHeight="498.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spark.FXMLNewProfileController">
@@ -17,9 +18,12 @@
       <TextField fx:id="career" layoutX="336.0" layoutY="154.0" prefHeight="26.0" prefWidth="162.0" promptText="Career Field" />
       <TextArea fx:id="bio" layoutX="145.0" layoutY="239.0" prefHeight="88.0" prefWidth="323.0" />
       <Label layoutX="131.0" layoutY="212.0" text="Bio:" />
-      <RadioButton fx:id="student" layoutX="145.0" layoutY="389.0" mnemonicParsing="false" text="Student" />
-      <RadioButton fx:id="jobSeeker" layoutX="268.0" layoutY="389.0" mnemonicParsing="false" text="Job Seeker" />
-      <RadioButton fx:id="employer" layoutX="387.0" layoutY="389.0" mnemonicParsing="false" text="Employer" />
+      <RadioButton fx:id="student" layoutX="145.0" layoutY="389.0" mnemonicParsing="false" text="Student">
+         <toggleGroup>
+            <ToggleGroup fx:id="group" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="jobSeeker" layoutX="268.0" layoutY="389.0" mnemonicParsing="false" text="Job Seeker" toggleGroup="$group" />
+      <RadioButton fx:id="employer" layoutX="387.0" layoutY="389.0" mnemonicParsing="false" text="Employer" toggleGroup="$group" />
       <Label layoutX="145.0" layoutY="356.0" text="Account Type: " />
       <Button fx:id="backBtn" layoutX="118.0" layoutY="452.0" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="32.0" prefWidth="142.0" text="Back" />
       <Button fx:id="saveBtn" layoutX="341.0" layoutY="452.0" mnemonicParsing="false" onAction="#handleSaveButtonAction" prefHeight="32.0" prefWidth="142.0" text="Save" />
