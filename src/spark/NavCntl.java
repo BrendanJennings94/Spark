@@ -53,7 +53,7 @@ public class NavCntl {
         if (PersonalityTestFlag == false){
         try{
         //Custom navigation view
-        root = FXMLLoader.load(getClass().getResource("FXMLNavigation.fxml"));
+        root = FXMLLoader.load(getClass().getResource("FXMLNavigationUI.fxml"));
         scene = new Scene (root);
         stage.setScene(scene);
         stage.show();
@@ -63,7 +63,7 @@ public class NavCntl {
         else{
             try{
         //Changing back to the original navigation view
-        root = FXMLLoader.load(getClass().getResource("FXMLNavigation.fxml"));
+        root = FXMLLoader.load(getClass().getResource("FXMLNavigationUI.fxml"));
         scene = new Scene (root);
         stage.setScene(scene);
         stage.show();

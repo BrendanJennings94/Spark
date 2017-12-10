@@ -8,7 +8,7 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="498.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spark.FXMLNewProfileController">
+<AnchorPane id="AnchorPane" prefHeight="498.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spark.NewProfileUICntl">
    <children>
       <TextField fx:id="userName" layoutX="113.0" layoutY="44.0" promptText="User Name" />
       <TextField fx:id="password" layoutX="336.0" layoutY="44.0" promptText="Password" />

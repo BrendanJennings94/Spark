@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spark.FXMLNavigationController">
+<AnchorPane id="AnchorPane" prefHeight="440.0" prefWidth="630.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spark.NavUICntl">
    <children>
       <TextField layoutX="98.0" layoutY="342.0" prefHeight="26.0" prefWidth="433.0" promptText="Search Jobs..." />
       <Label layoutX="182.0" layoutY="307.0" prefHeight="27.0" prefWidth="266.0" text="Enter a keyword, title, or location">

@@ -22,7 +22,7 @@ import javafx.stage.Stage;
  *
  * @author brend
  */
-public class FXMLProfileUIController implements Initializable  {
+public class ProfileUICntl implements Initializable  {
     @FXML private Button backBtn;
     @FXML private Button saveBtn;
     @FXML private TextField userName;

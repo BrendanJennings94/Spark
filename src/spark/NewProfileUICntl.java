@@ -21,7 +21,7 @@ import javafx.stage.Stage;
  *
  * @author brend
  */
-public class FXMLNewProfileController {
+public class NewProfileUICntl {
     @FXML private Button backBtn;
     @FXML private Button saveBtn;
     @FXML private TextField userName;

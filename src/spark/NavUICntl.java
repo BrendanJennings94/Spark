@@ -21,7 +21,7 @@ import javafx.stage.Stage;
  *
  * @author brend
  */
-public class FXMLNavigationController  {
+public class NavUICntl  {
     //FXML DECLATIONS
     @FXML private Button logoutBtn;
     @FXML private Button profBtn;
