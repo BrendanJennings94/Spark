@@ -61,7 +61,7 @@ public class NewProfileUICntl {
         
         
         
-        User newUser = new User(UN,PW,FN,LN,DOB,car,biog,type);
+        User newUser = new User(UN,PW,FN,LN,DOB,car,biog,type, null);
        
         Stage theStage = (Stage) saveBtn.getScene().getWindow();
         NewProfileCntl.getNewProfileCntl(theStage).addUser(newUser);

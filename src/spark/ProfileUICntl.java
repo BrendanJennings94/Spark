@@ -65,7 +65,7 @@ public class ProfileUICntl implements Initializable  {
     }
 
     @FXML protected void handleSaveButtonAction(){
-        User updatedUser = new User(userName.getText(),passWord.getText(),firstName.getText(),lastName.getText(),dateOfBirth.getText(),career.getText(),bio.getText(),profTypeNumber());
+        User updatedUser = new User(userName.getText(),passWord.getText(),firstName.getText(),lastName.getText(),dateOfBirth.getText(),career.getText(),bio.getText(),profTypeNumber(),null);
         PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getTheUserList().updateUserInfo(PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getTheUserList().matchUserIndex(updatedUser.getUserName()), updatedUser);
         PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().setLoggedUser(updatedUser);
         PersistentDataCntl.getPersistentDataCntl().writeSerializedDataModel();

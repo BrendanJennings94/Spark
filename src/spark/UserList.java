@@ -17,9 +17,9 @@ public class UserList implements Serializable {
     
     public UserList(){
         theUserList = new ArrayList();
-        User User1 = new User("bob94","PassWord", "Bob", "Jones", "10/10/1994", "none","random bio info", 1);
-        User User2 = new User("JohnS","Example", "John", "Smith", "8/12/1990", "Accountant","other information", 2);
-        User User3 = new User("AnotherName","Words", "Another", "Name", "1/1/1", "Software Developer" ,"info here", 3);
+        User User1 = new User("bob94","PassWord", "Bob", "Jones", "10/10/1994", "none","random bio info", 1, null);
+        User User2 = new User("JohnS","Example", "John", "Smith", "8/12/1990", "Accountant","other information", 2, null);
+        User User3 = new User("AnotherName","Words", "Another", "Name", "1/1/1", "Software Developer" ,"info here", 3, null);
         theUserList.add(User1);
         theUserList.add(User2);
         theUserList.add(User3);
@@ -39,7 +39,7 @@ public class UserList implements Serializable {
     }
     
     public void addUser(String UN, String PW, String FN, String LN, String DOB, String car, String bio, int type ){
-        User newUser = new User(UN, PW, FN, LN, DOB, car, bio, type);
+        User newUser = new User(UN, PW, FN, LN, DOB, car, bio, type, null);
     }
     
     public int matchUserIndex(String UserName){

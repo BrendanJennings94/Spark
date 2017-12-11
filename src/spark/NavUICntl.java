@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import java.util.ArrayList;
 
 /**
  * FXML Controller class
@@ -57,6 +58,7 @@ public class NavUICntl  {
     private double DETAIL = 0;
     private double SOCIAL = 0;
     private double FLEX = 0;
+    ArrayList<Double> persTestValues = new ArrayList<Double>();
     
     @FXML protected void handleProfButtonAction(ActionEvent event){
         Stage stage = (Stage) profBtn.getScene().getWindow();
@@ -96,14 +98,28 @@ public class NavUICntl  {
         FLEX += s3.getValue();
         MOBILE += s3.getValue();
         
-       // PersonalityResults User1 = new PersonalityResults(MOBILE, NOCT, GOAL, DETAIL, SOCIAL, FLEX);
+       //persTestValues.add(MOBILE, NOCT, GOAL, DETAIL, SOCIAL, FLEX);
+        persTestValues.add(MOBILE);
+        persTestValues.add(NOCT);
+        persTestValues.add(GOAL);
+        persTestValues.add(DETAIL);
+        persTestValues.add(SOCIAL);
+        persTestValues.add(FLEX);
+       
+       
         
-
+       
+        //Updates the current logged users personality test scores
+        PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getLoggedUser().setPersTestValues(persTestValues);
+        
+        //Test
+        System.out.println(PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getLoggedUser().getPersTestValues());
+        
         
         //RETURN TO
-        Stage newStage = (Stage) returnToHome.getScene().getWindow();
-        newStage.hide();
-        NavCntl returnBack = NavCntl.getNavCntl(newStage);
+        Stage theStage = (Stage) returnToHome.getScene().getWindow();
+        theStage.hide();
+        NavCntl.getNavCntl(theStage).setUpNavScene();
         
     }
     

@@ -6,6 +6,7 @@
 package spark;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,8 +21,9 @@ public class User implements Serializable {
     private String career;
     private String bio;
     private int profileType;
+    private ArrayList<Double> persTestValues = new ArrayList<Double>();
     
-    public User(String theUserName, String thePassword, String theFN, String theLN, String theDOB,String theCareer, String theBio, int theProfType){
+    public User(String theUserName, String thePassword, String theFN, String theLN, String theDOB,String theCareer, String theBio, int theProfType, ArrayList<Double> thePersTestValues){
         userName = theUserName;
         password = thePassword;
         firstName = theFN;
@@ -30,6 +32,17 @@ public class User implements Serializable {
         career = theCareer;
         bio = theBio;
         profileType = theProfType;
+        if (thePersTestValues == null){
+            persTestValues.add(0.0); // MOBILE
+            persTestValues.add(0.0); // NOCT
+            persTestValues.add(0.0); // GOAL
+            persTestValues.add(0.0); // DETAIL
+            persTestValues.add(0.0); // SOCIAL
+            persTestValues.add(0.0); // FLEX
+        }
+        else {
+            persTestValues = thePersTestValues;
+        }
         
     }
 
@@ -143,6 +156,20 @@ public class User implements Serializable {
      */
     public void setCareer(String career) {
         this.career = career;
+    }
+
+    /**
+     * @return the persTestValues
+     */
+    public ArrayList<Double> getPersTestValues() {
+        return persTestValues;
+    }
+
+    /**
+     * @param persTestValues the persTestValues to set
+     */
+    public void setPersTestValues(ArrayList<Double> persTestValues) {
+        this.persTestValues = persTestValues;
     }
     
 }
