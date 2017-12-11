@@ -21,8 +21,6 @@ import javafx.scene.text.Text;
 public class PersTestCntl {
     private Stage stage;
     private static PersTestCntl PersTestCntl;
-    @FXML
-    private Button nextScreen;
     
     private PersTestCntl(Stage theExistingStage){
         
@@ -48,7 +46,7 @@ public class PersTestCntl {
         
         try{
         //just a note to change back to the original navigation view
-        root = FXMLLoader.load(getClass().getResource("FXMLPersonalityTest1.fxml"));
+        root = FXMLLoader.load(getClass().getResource("FXMLPersonalityTestUI.fxml"));
         scene = new Scene (root);
         stage.setScene(scene);
         stage.show();
@@ -58,10 +56,5 @@ public class PersTestCntl {
         }
     }
         
-    
-    public void exit(){
-        System.exit(0);
-    }
-            
-          
+   
 }

@@ -7,15 +7,15 @@
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<ScrollPane prefHeight="1161.0" prefWidth="828.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spark.NavUICntl">
+<ScrollPane prefHeight="512.0" prefWidth="534.0" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="spark.PersTestUICntl">
    <content>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1159.0" prefWidth="1272.0">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1200.0" prefWidth="534.0">
          <children>
             <Label layoutX="14.0" layoutY="161.0" prefHeight="21.0" prefWidth="362.0" text="Are you more productive in the moring or the night?" />
             <CheckBox fx:id="c5" layoutX="14.0" layoutY="203.0" mnemonicParsing="false" onAction="#handleCheckGroup2" text="The morning" />
             <CheckBox fx:id="c6" layoutX="131.0" layoutY="203.0" mnemonicParsing="false" onAction="#handleCheckGroup2" text="The night time" />
             <Slider fx:id="s1" blockIncrement="1.0" layoutX="17.0" layoutY="268.0" majorTickUnit="1.0" max="10.0" minorTickCount="1" prefHeight="18.0" prefWidth="232.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
-            <Label layoutX="20.0" layoutY="237.0" prefHeight="21.0" prefWidth="439.0" text="On a scale of 1 - 10 how much do you like desk jobs?" />
+            <Label layoutX="20.0" layoutY="240.0" prefHeight="21.0" prefWidth="439.0" text="On a scale of 1 - 10 how much do you like desk jobs?" />
             <Label layoutX="19.0" layoutY="358.0" prefHeight="21.0" prefWidth="9.0" />
             <Label layoutX="268.0" layoutY="358.0" />
             <CheckBox fx:id="c3" layoutX="14.0" layoutY="111.0" mnemonicParsing="false" onAction="#handleCheckGroup1" text="Reading " />
@@ -46,7 +46,7 @@
             <CheckBox fx:id="c16" layoutX="401.0" layoutY="818.0" mnemonicParsing="false" onAction="#handleCheckGroup5" text="Greatly" />
             <Slider fx:id="s3" layoutX="21.0" layoutY="919.0" majorTickUnit="1.0" max="10.0" minorTickCount="1" prefHeight="18.0" prefWidth="266.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
             <Slider fx:id="s4" layoutX="21.0" layoutY="1047.0" majorTickUnit="1.0" max="10.0" minorTickCount="1" prefHeight="18.0" prefWidth="266.0" showTickLabels="true" showTickMarks="true" />
-            <Button fx:id="returnToHome" layoutX="603.0" layoutY="1104.0" mnemonicParsing="false" onAction="#handleSumbitButtonAction" text="Submit" />
+            <Button fx:id="returnToHome" layoutX="204.0" layoutY="1096.0" mnemonicParsing="false" onAction="#handleSumbitButtonAction" prefHeight="26.0" prefWidth="124.0" text="Submit" />
          </children>
       </AnchorPane>
    </content>

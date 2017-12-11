@@ -24,12 +24,8 @@ import javafx.scene.text.Text;
 public class NavCntl {
     @FXML private Stage stage;
     private static NavCntl theNavCntl;
-    private boolean PersonalityTestFlag;
-    private static User theLoggedUser; 
-    
-    
+     
     private NavCntl(Stage theExistingStage){
-        PersonalityTestFlag = false;
         stage = theExistingStage;
         setUpNavScene();
         stage.show();
@@ -49,8 +45,6 @@ public class NavCntl {
     @FXML public void setUpNavScene(){
         Parent root;
         Scene scene;
-        
-        if (PersonalityTestFlag == false){
         try{
         //Custom navigation view
         root = FXMLLoader.load(getClass().getResource("FXMLNavigationUI.fxml"));
@@ -59,17 +53,8 @@ public class NavCntl {
         stage.show();
         }catch(Exception e){
             e.printStackTrace();
-        }}
-        else{
-            try{
-        //Changing back to the original navigation view
-        root = FXMLLoader.load(getClass().getResource("FXMLNavigationUI.fxml"));
-        scene = new Scene (root);
-        stage.setScene(scene);
-        stage.show();
-        }catch(Exception e){
-            e.printStackTrace();
-        }}
+            }
+        
     }
     
     public void Logout() throws URISyntaxException, IOException{
