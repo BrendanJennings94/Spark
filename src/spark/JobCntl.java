@@ -51,6 +51,7 @@ public class JobCntl {
         }
     }
     
+    //adds job to the persistent data list, updates display
     public void addJob(Job newJob){
         PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getTheJobList().getJobData().add(newJob);
         PersistentDataCntl.getPersistentDataCntl().writeSerializedDataModel();

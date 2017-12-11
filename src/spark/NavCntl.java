@@ -57,6 +57,7 @@ public class NavCntl {
         
     }
     
+    //restarts the application
     public void Logout() throws URISyntaxException, IOException{
         final String javaBin = System.getProperty("java.home") + File.separator + "bin" + File.separator + "java";
         final File currentJar = new File(Spark.class.getProtectionDomain().getCodeSource().getLocation().toURI());

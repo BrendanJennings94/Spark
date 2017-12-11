@@ -15,6 +15,7 @@ import java.io.Serializable;
  */
 public class Career implements Serializable{
     
+    //career variables
     private String careerName;
     private String description;
     private String salaryRange;

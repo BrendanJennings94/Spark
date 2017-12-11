@@ -30,6 +30,7 @@ public class CareerList implements Serializable{
         theCareerList.add(career3);
     }
     
+    //pulls the career list data from the peristent data
     public ObservableList<Career> getCareerData(){
         ObservableList<Career> theListOfCareers;
         List<Career> careerList = (List<Career>) theCareerList;
