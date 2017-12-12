@@ -34,6 +34,7 @@ public class NewProfileUICntl {
     @FXML private TextField dateOfBirth;
     @FXML private TextField career;
     @FXML private TextArea bio;
+    @FXML private ToggleGroup group;
     @FXML Stage stage; 
     
     

@@ -39,6 +39,7 @@ public class User implements Serializable {
             persTestValues.add(0.0); // DETAIL
             persTestValues.add(0.0); // SOCIAL
             persTestValues.add(0.0); // FLEX
+            persTestValues.add(0.0); // COMP
         }
         else {
             persTestValues = thePersTestValues;

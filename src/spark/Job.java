@@ -16,6 +16,8 @@ public class Job implements Serializable {
     private String company;
     private String salary;
     
+    
+    
     public Job(String theJT, String theComp, String theSal){
         jobTitle = theJT;
         company = theComp;

@@ -51,7 +51,6 @@ public class CareerCntl {
         }
     }
     
-    //adds career to the persistent data list, updates screen to display
     public void addCareer(Career newCareer){
         PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getTheCareerList().getCareerData().add(newCareer);
         PersistentDataCntl.getPersistentDataCntl().writeSerializedDataModel();

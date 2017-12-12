@@ -33,6 +33,10 @@ public class CareerUICntl implements Initializable {
     @FXML private TextField careerTxt;
     @FXML private TextField descriptionTxt;
     @FXML private TextField salaryRangeTxt;
+    @FXML private TableView<String> recommendedJobs = new TableView<String>();
+    @FXML private ObservableList<String> listOfJobs; 
+    CompatibiltyTest checkScores = new CompatibiltyTest();
+    
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -46,6 +50,14 @@ public class CareerUICntl implements Initializable {
         if(PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getLoggedUser().getProfileType()!=3){
             postBtn.setDisable(true);
         }
+        
+        User testUser = PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getLoggedUser();
+        checkScores.testPersValues(testUser);
+    
+        listOfJobs.add(checkScores.getRecommendedJob1());
+        listOfJobs.add(checkScores.getRecommendedJob2());
+    
+         recommendedJobs.setItems(listOfJobs);
     }
     
     public void handlePostCareerButtonAction(){

@@ -43,9 +43,7 @@ public class LoginCntl {
         String attUN = userName.getText();
         String attPass = passField.getText();
         if(requestAuthenticate(attUN, attPass)){
-            //gets user position in list
             User theUser = PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getTheUserList().getTheUserList().get(PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().getTheUserList().Authenticate(attUN, attPass));
-            //makes this user the logged in user
             PersistentDataCntl.getPersistentDataCntl().getPeristentDataCollection().setLoggedUser(theUser);
             PersistentDataCntl.getPersistentDataCntl().writeSerializedDataModel();
             Stage stage = (Stage) fail.getScene().getWindow();
@@ -59,7 +57,6 @@ public class LoginCntl {
         }
     }
 
-    //calls authenticate in user list using the users inputed user name and password
     public boolean requestAuthenticate(String attemptUN, String attemptPass){
         boolean result = false;
         int possibleUser;
